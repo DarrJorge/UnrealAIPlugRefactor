@@ -19,3 +19,10 @@ The latest updates significantly improved the plugin’s architecture and code m
 - Extensible execution interface  
 - Safe resource and process handling  
 - Clean and logical project structure  
+
+
+## 🧱 Technologies
+- Unreal Engine 5.7
+- C++20
+- Python Integration
+- Design Patterns: Command, NonCopyable
