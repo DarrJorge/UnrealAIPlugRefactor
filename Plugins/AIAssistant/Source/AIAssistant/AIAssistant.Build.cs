@@ -7,25 +7,11 @@ public class AIAssistant : ModuleRules
 	public AIAssistant(ReadOnlyTargetRules Target) : base(Target)
 	{
 		// For IWYU audits..
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs; // ..keep
-		IWYUSupport = IWYUSupport.Full;  // ..keep, can be None/Minimal/Full
-		bUseUnity = true; // ..toggle as needed, use false for IWYU audit
-
-
+		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		IWYUSupport = IWYUSupport.Full;
+		bUseUnity = true;
+		
 		PublicDefinitions.Add("WITH_AIASSISTANT_EPIC_INTERNAL=1"); 
-
-		
-		PublicIncludePaths.AddRange(
-			new string[] {
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-			}
-			);
-			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
@@ -33,7 +19,6 @@ public class AIAssistant : ModuleRules
 				"Core",
 			}
 			);
-			
 		
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
@@ -60,22 +45,11 @@ public class AIAssistant : ModuleRules
 				"ContentBrowser",
 				"AssetRegistry",
 				"LevelEditor",
-				// For Python execution -
 				"PythonScriptPlugin",
-				// For Slate input -
 				"Slate",
 				"SlateCore",
-				// For clipboard actions -
 				"ApplicationCore",
-				// For web browser -
 				"WebBrowser"
-			}
-			);
-		
-		
-		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
 			}
 			);
 	}

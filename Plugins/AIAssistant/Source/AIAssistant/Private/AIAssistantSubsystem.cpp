@@ -15,7 +15,6 @@
 
 
 using namespace UE::AIAssistant;
-using namespace UE::AIAssistant::PythonExecutor;
 
 //
 // Statics.
@@ -48,17 +47,17 @@ void UAIAssistantSubsystem::Deinitialize()
 	Super::Deinitialize();
 }
 
-/*no:static*/ FString UAIAssistantSubsystem::ExecutePythonScriptViaJavaScript(const FString& Code)
+FString UAIAssistantSubsystem::ExecutePythonScriptViaJavaScript(const FString& Code)
 {
-	FString CodeOutput;
-	ExecutePythonScript(Code, &CodeOutput);
+	const TUniquePtr<ICodeExecutor> CodeExecutor = MakeUnique<PythonExecutor>();
+	const FCodeExecutionResult Result = CodeExecutor->Execute(Code);
 
-	if (CodeOutput.IsEmpty())
+	if (Result.bSuccess && Result.Output.IsEmpty())
 	{
-		CodeOutput = TEXT("Code executed successfully.");
+		return TEXT("Code executed successfully.");
 	}
 	
-	return CodeOutput;
+	return Result.Output;
 }
 
 
