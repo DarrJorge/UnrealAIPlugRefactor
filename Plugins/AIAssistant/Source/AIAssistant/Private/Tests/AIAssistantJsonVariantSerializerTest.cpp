@@ -6,8 +6,8 @@
 #include "Serialization/JsonSerializable.h"
 #include "Serialization/JsonSerializerMacros.h"
 
-#include "AIAssistantEnum.h"
-#include "AIAssistantJsonVariantSerializer.h"
+#include "Utils/AIAssistantEnum.h"
+#include "Utils/AIAssistantJsonVariantSerializer.h"
 #include "AIAssistantTestFlags.h"
 
 #if WITH_DEV_AUTOMATION_TESTS

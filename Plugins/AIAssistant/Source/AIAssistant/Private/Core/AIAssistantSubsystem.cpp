@@ -8,8 +8,8 @@
 #include "Modules/ModuleManager.h"
 
 #include "AIAssistant.h"
-#include "AIAssistantPythonExecutor.h"
-#include "AIAssistantWebBrowser.h"
+#include "Python/AIAssistantPythonExecutor.h"
+#include "UI/AIAssistantWebBrowser.h"
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(AIAssistantSubsystem)
 

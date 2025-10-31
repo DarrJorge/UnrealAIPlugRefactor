@@ -5,8 +5,7 @@
 #include "Misc/AutomationTest.h"
 #include "Misc/Optional.h"
 #include "Templates/SharedPointer.h"
-
-#include "AIAssistantConsole.h"
+#include "Core/AIAssistantConsole.h"
 #include "AIAssistantTestFlags.h"
 
 #if WITH_DEV_AUTOMATION_TESTS

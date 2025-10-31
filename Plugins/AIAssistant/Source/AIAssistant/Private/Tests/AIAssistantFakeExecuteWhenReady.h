@@ -4,7 +4,7 @@
 #pragma once
 
 
-#include "AIAssistantExecuteWhenReady.h"
+#include "Core/AIAssistantExecuteWhenReady.h"
 
 
 namespace UE::AIAssistant

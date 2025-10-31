@@ -5,7 +5,7 @@
 #include "Containers/UnrealString.h"
 #include "Templates/SharedPointer.h"
 
-#include "AIAssistantWebJavaScriptResultDelegate.h"
+#include "WebAPI/AIAssistantWebJavaScriptResultDelegate.h"
 
 namespace UE::AIAssistant
 {

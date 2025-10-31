@@ -4,7 +4,7 @@
 #include "Containers/UnrealString.h"
 #include "Misc/AutomationTest.h"
 
-#include "AIAssistantEnum.h"
+#include "Utils/AIAssistantEnum.h"
 #include "AIAssistantTestFlags.h"
 
 #if WITH_DEV_AUTOMATION_TESTS

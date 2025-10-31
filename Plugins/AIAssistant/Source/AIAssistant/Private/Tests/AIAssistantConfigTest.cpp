@@ -8,7 +8,7 @@
 #include "Misc/Paths.h"
 #include "HAL/FileManager.h"
 
-#include "AIAssistantConfig.h"
+#include "Core/AIAssistantConfig.h"
 #include "Tests/AIAssistantTestFlags.h"
 
 #if WITH_DEV_AUTOMATION_TESTS

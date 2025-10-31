@@ -8,7 +8,7 @@
 #include "AIAssistantTestFlags.h"
 #include "AIAssistantTestObject.h"
 #include "AIAssistantFakeWebJavaScriptDelegateBinder.h"
-#include "AIAssistantWebJavaScriptDelegateBinder.h"
+#include "WebAPI/AIAssistantWebJavaScriptDelegateBinder.h"
 
 #if WITH_DEV_AUTOMATION_TESTS
 

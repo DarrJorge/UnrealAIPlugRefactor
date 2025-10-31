@@ -6,8 +6,8 @@
 #include "UObject/Object.h"
 #include "UObject/StrongObjectPtr.h"
 
-#include "AIAssistantLog.h"
-#include "AIAssistantWebJavaScriptDelegateBinder.h"
+#include "Core/AIAssistantLog.h"
+#include "WebAPI/AIAssistantWebJavaScriptDelegateBinder.h"
 
 namespace UE::AIAssistant
 {

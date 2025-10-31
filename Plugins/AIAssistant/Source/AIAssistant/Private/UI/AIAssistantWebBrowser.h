@@ -7,12 +7,12 @@
 #include "Misc/Optional.h"
 #include "SWebBrowser.h"
 
-#include "AIAssistantConfig.h"
-#include "AIAssistantConsole.h"
-#include "AIAssistantConversationReadyExecutor.h"
-#include "AIAssistantExecuteWhenReady.h"
-#include "AIAssistantWebJavaScriptDelegateBinder.h"
-#include "AIAssistantWebApi.h"
+#include "Core/AIAssistantConfig.h"
+#include "Core/AIAssistantConsole.h"
+#include "Core/AIAssistantConversationReadyExecutor.h"
+#include "Core/AIAssistantExecuteWhenReady.h"
+#include "WebAPI/AIAssistantWebJavaScriptDelegateBinder.h"
+#include "WebAPI/AIAssistantWebApi.h"
 
 
 //

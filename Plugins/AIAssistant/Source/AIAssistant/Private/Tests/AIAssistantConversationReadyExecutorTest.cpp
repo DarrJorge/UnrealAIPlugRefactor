@@ -3,8 +3,8 @@
 #include "Containers/UnrealString.h"
 #include "Misc/AutomationTest.h"
 
-#include "AIAssistantConversationReadyExecutor.h"
-#include "AIAssistantExecuteWhenReady.h"
+#include "Core/AIAssistantConversationReadyExecutor.h"
+#include "Core/AIAssistantExecuteWhenReady.h"
 #include "AIAssistantTestFlags.h"
 
 using namespace UE::AIAssistant;

@@ -2,8 +2,7 @@
 	
 
 #include "AIAssistantFakeExecuteWhenReady.h"
-
-#include "AIAssistantExecuteWhenReady.h"
+#include "Core/AIAssistantExecuteWhenReady.h"
 
 
 UE::AIAssistant::FFakeExecuteWhenReady::FFakeExecuteWhenReady(ETestMode InTestMode) :

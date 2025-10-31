@@ -8,11 +8,11 @@
 #include "HAL/PlatformApplicationMisc.h"
 #include "Framework/Application/SlateApplication.h"
 
-#include "AIAssistantCommands.h"
-#include "AIAssistantInputProcessor.h"
-#include "AIAssistantSlateQuerier.h"
-#include "AIAssistantStyle.h"
-#include "AIAssistantWebBrowser.h"
+#include "UI/AIAssistantCommands.h"
+#include "UI/AIAssistantInputProcessor.h"
+#include "UI/AIAssistantSlateQuerier.h"
+#include "UI/AIAssistantStyle.h"
+#include "UI/AIAssistantWebBrowser.h"
 
 #define LOCTEXT_NAMESPACE "FAIAssistantModule"
 

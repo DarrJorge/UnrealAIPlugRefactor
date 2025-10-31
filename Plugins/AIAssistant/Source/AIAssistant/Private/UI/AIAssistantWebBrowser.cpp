@@ -12,7 +12,7 @@
 #include "Misc/EngineVersion.h"
 #include "Misc/FileHelper.h"
 
-#include "AIAssistantLog.h"
+#include "Core/AIAssistantLog.h"
 
 using namespace UE::AIAssistant;
 

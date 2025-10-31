@@ -16,8 +16,8 @@
 #include "Templates/ValueOrError.h"
 #include "UObject/StrongObjectPtr.h"
 
-#include "AIAssistantEnum.h"
-#include "AIAssistantJsonVariantSerializer.h"
+#include "Utils/AIAssistantEnum.h"
+#include "Utils/AIAssistantJsonVariantSerializer.h"
 #include "AIAssistantWebJavaScriptDelegateBinder.h"
 #include "AIAssistantWebJavaScriptResultDelegate.h"
 #include "Utils/ICodeExecutor.h"

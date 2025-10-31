@@ -16,13 +16,10 @@
 #include "Widgets/Input/SMultiLineEditableTextBox.h"
 #include "Widgets/Input/SSearchBox.h"
 #include "Widgets/Docking/SDockTab.h"
-#include "Filters/SFilterSearchBox.h"
 #include "SGraphNode.h"
 #include "Framework/Application/SlateApplication.h"
-
-#include "AIAssistant.h"
-#include "AIAssistantLog.h"
-#include "AIAssistantSubsystem.h"
+#include "Core/AIAssistantLog.h"
+#include "Core/AIAssistantSubsystem.h"
 #include "AIAssistantWebBrowser.h"
 
 

@@ -7,7 +7,7 @@
 #include "Misc/TVariantMeta.h"
 #include "Serialization/JsonSerializerBase.h"
 
-#include "AIAssistantLog.h"
+#include "Core/AIAssistantLog.h"
 
 // Macro for TJsonVariantSerializer that provide a similar interface to JSON_SERIALIZE_VARIANT_*()
 // This must be used within a BEGIN_JSON_SERIALIZER() block and must end with

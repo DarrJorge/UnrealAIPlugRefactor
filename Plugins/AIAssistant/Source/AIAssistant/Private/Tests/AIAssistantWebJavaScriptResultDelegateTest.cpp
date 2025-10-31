@@ -10,7 +10,7 @@
 
 #include "AIAssistantTestFlags.h"
 #include "AIAssistantFakeWebJavaScriptDelegateBinder.h"
-#include "AIAssistantWebJavaScriptResultDelegate.h"
+#include "WebAPI/AIAssistantWebJavaScriptResultDelegate.h"
 #include "AIAssistantWebJavaScriptResultDelegateAccessor.h"
 
 #if WITH_DEV_AUTOMATION_TESTS
