@@ -12,7 +12,6 @@
 #include "AIAssistantConversationReadyExecutor.h"
 #include "AIAssistantExecuteWhenReady.h"
 #include "AIAssistantWebJavaScriptDelegateBinder.h"
-#include "AIAssistantWebJavaScriptExecutor.h"
 #include "AIAssistantWebApi.h"
 
 
@@ -32,7 +31,7 @@
 class SAIAssistantWebBrowser :
 	public SCompoundWidget,
 	public UE::AIAssistant::IWebJavaScriptDelegateBinder,
-	public UE::AIAssistant::IWebJavaScriptExecutor
+	public UE::AIAssistant::ICodeExecutor
 {
 public:
 	SLATE_BEGIN_ARGS(SAIAssistantWebBrowser) {}
@@ -58,7 +57,7 @@ public:
 	 * JavaScript string to immediately execute in the web browser.
 	 * @param JavaScript 
 	 */
-	virtual void ExecuteJavaScript(const FString& JavaScript) override;
+	virtual UE::AIAssistant::FCodeExecutionResult Execute(const FString& JavaScript) override;
 
 	// See IWebBrowserWindow::BindUObject() / IWebBrowserWindow::UnbindUObject().
 	virtual void BindUObject(const FString& Name, UObject* Object, bool bIsPermanent = true) override;

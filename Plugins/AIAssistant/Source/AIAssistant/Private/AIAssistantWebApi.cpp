@@ -30,10 +30,8 @@ try {
 }
 )js");
 
-	FWebApi::FWebApi(
-		IWebJavaScriptExecutor& JavaScriptExecutor,
-		IWebJavaScriptDelegateBinder& JavaScriptDelegateBinder) :
-		WebJavaScriptExecutor(JavaScriptExecutor),
+	FWebApi::FWebApi(ICodeExecutor& InCodeExecutor, IWebJavaScriptDelegateBinder& JavaScriptDelegateBinder) :
+		CodeExecutor(InCodeExecutor),
 		WebJavaScriptDelegateBinder(JavaScriptDelegateBinder),
 		WebJavaScriptResultDelegate(NewObject<UAIAssistantWebJavaScriptResultDelegate>())
 	{
@@ -115,10 +113,9 @@ try {
 		return MoveTemp(HandlerIdAndFuture.Value);
 	}
 
-	void FWebApi::ExecuteAsyncFunction(
-		const TCHAR* FunctionName, const TCHAR* Arguments, const TCHAR* HandlerId)
+	void FWebApi::ExecuteAsyncFunction(const TCHAR* FunctionName, const TCHAR* Arguments, const TCHAR* HandlerId)
 	{
-		WebJavaScriptExecutor.ExecuteJavaScript(
+		CodeExecutor.Execute(
 			FormatFunctionCall(FunctionName, Arguments, HandlerId));
 	}
 

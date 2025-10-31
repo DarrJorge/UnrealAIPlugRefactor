@@ -19,8 +19,9 @@
 #include "AIAssistantEnum.h"
 #include "AIAssistantJsonVariantSerializer.h"
 #include "AIAssistantWebJavaScriptDelegateBinder.h"
-#include "AIAssistantWebJavaScriptExecutor.h"
 #include "AIAssistantWebJavaScriptResultDelegate.h"
+#include "Utils/ICodeExecutor.h"
+
 
 namespace UE::AIAssistant
 {
@@ -206,8 +207,7 @@ namespace UE::AIAssistant
 		friend class FWebApiAccessor;
 
 	public:
-		FWebApi(IWebJavaScriptExecutor& JavaScriptExecutor,
-				IWebJavaScriptDelegateBinder& JavaScriptDelegateBinder);
+		FWebApi(ICodeExecutor& CodeExecutor, IWebJavaScriptDelegateBinder& JavaScriptDelegateBinder);
 
 		// Prevent copy.
 		//FWebApi(const FWebApi&) = delete;
@@ -342,7 +342,7 @@ namespace UE::AIAssistant
 		void UnbindUObject(const FString& Name, UObject* Object, bool bIsPermanent = true) override;
 
 	protected:
-		IWebJavaScriptExecutor& WebJavaScriptExecutor;
+		ICodeExecutor& CodeExecutor;
 		IWebJavaScriptDelegateBinder& WebJavaScriptDelegateBinder;
 		TStrongObjectPtr<UAIAssistantWebJavaScriptResultDelegate> WebJavaScriptResultDelegate;
 

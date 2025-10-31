@@ -3,19 +3,19 @@
 
 #include "Containers/Array.h"
 #include "Containers/UnrealString.h"
-
-#include "AIAssistantWebJavaScriptExecutor.h"
+#include "Utils/ICodeExecutor.h"
 
 namespace UE::AIAssistant
 {
 	// Executes JavaScript in a web browser.
-	struct FFakeWebJavaScriptExecutor : public IWebJavaScriptExecutor
+	struct FFakeWebJavaScriptExecutor : public ICodeExecutor
 	{	
 		virtual ~FFakeWebJavaScriptExecutor() = default;
 
-		void ExecuteJavaScript(const FString& JavaScriptText) override
+		FCodeExecutionResult Execute(const FString& JavaScriptText) override
 		{
 			ExecutedJavaScriptText.Add(JavaScriptText);
+			return FCodeExecutionResult{true};
 		}
 
 		TArray<FString> ExecutedJavaScriptText;

@@ -257,10 +257,11 @@ bool SAIAssistantWebBrowser::LoadUrl(const FString& Url, const bool bOpenInExter
 }
 
 
-void SAIAssistantWebBrowser::ExecuteJavaScript(const FString& JavaScript)
+FCodeExecutionResult SAIAssistantWebBrowser::Execute(const FString& JavaScript)
 {
 	check(WebBrowserWidget);
 	WebBrowserWidget->ExecuteJavascript(JavaScript);
+	return FCodeExecutionResult{true};
 }
 
 
