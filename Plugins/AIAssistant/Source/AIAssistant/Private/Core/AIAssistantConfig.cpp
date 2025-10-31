@@ -1,13 +1,11 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "AIAssistantConfig.h"
-
-#include "Containers/Set.h"
 #include "Misc/FileHelper.h"
 #include "Misc/Optional.h"
 #include "Misc/Paths.h"
 #include "Templates/UnrealTemplate.h"
-
+#include "Utils/Utility.h"
 #include "AIAssistantLog.h"
 
 const FString FAIAssistantConfig::DefaultFilename("AIAssistant.json");
@@ -36,33 +34,12 @@ const TArray<FString> FAIAssistantConfig::DefaultAllowedUrlRegexes =
 #endif
 };
 
-FString FAIAssistantConfig::GetMainUrlAsRegexString() const
-{
-	static const TSet<FString::ElementType> CharactersToEscape{
-		'.', '*', '+', '?', '(', ')', '[', ']', '{', '}', '^', '$', '|', '\\',
-	};
-	FString Escaped;
-	Escaped.Reserve((MainUrl.Len() * 2) + 2 /* Allow for regex anchors */);
-	Escaped += FString::ElementType('^');
-	for (const FString::ElementType Character : MainUrl)
-	{
-		if (CharactersToEscape.Contains(Character))
-		{
-			Escaped += FString::ElementType('\\');
-		}
-		Escaped += Character;
-	}
-	Escaped += FString::ElementType('$');
-	Escaped.Shrink();
-	return Escaped;
-}
-
 TArray<FString> FAIAssistantConfig::GetAllAllowedUrlRegexes() const
 {
 	const TArray<const TArray<FString>*> AllowedRegexStringArrays{
 		&DefaultAllowedUrlRegexes,
 		&AllowedUrlRegexes };
-	TArray<FString> AllowedRegexStrings{ GetMainUrlAsRegexString() };
+	TArray<FString> AllowedRegexStrings{ UE::AIAsistant::GetUrlAsRegexString(MainUrl) };
 	for (const auto& AllowedRegexStringArray : AllowedRegexStringArrays)
 	{
 		for (const auto& AllowedRegexString : *AllowedRegexStringArray)

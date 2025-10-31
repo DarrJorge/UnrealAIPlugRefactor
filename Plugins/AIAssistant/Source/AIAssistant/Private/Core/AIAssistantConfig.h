@@ -31,9 +31,6 @@ struct FAIAssistantConfig : public FJsonSerializable
 		JSON_SERIALIZE_ARRAY("allowed_url_regexes", AllowedUrlRegexes);
 	END_JSON_SERIALIZER
 
-	// Get the main URL as an escaped regex string.
-	FString GetMainUrlAsRegexString() const;
-
 	// Get the default configuration search directories with the most specific overrides first.
 	//
 	// For example, when searching the engine configuration directory:

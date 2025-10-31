@@ -7,11 +7,13 @@
 #include "Misc/Guid.h"
 #include "Misc/Paths.h"
 #include "HAL/FileManager.h"
-
+#include "Utils/Utility.h"
 #include "Core/AIAssistantConfig.h"
 #include "Tests/AIAssistantTestFlags.h"
 
 #if WITH_DEV_AUTOMATION_TESTS
+
+using namespace UE::AIAsistant;
 
 // Create a temporary directory for the lifetime of this class.
 class FTemporaryDirectory
@@ -114,7 +116,7 @@ bool FAIAssistantConfigTestLoadDefault::RunTest(const FString& UnusedParameters)
 	{
 		(void)TestEqual(
 			TEXT("MainUrlRegex"), AllowedUrlRegexes[0],
-			Config.GetMainUrlAsRegexString());
+			UE::AIAsistant::GetUrlAsRegexString(Config.MainUrl));
 		// +1 to skip the main URL regex.
 		for (int i = 1; i < AllowedUrlRegexes.Num(); ++i)
 		{
@@ -141,7 +143,7 @@ bool FAIAssistantConfigTestMainUrlRegex::RunTest(const FString& UnusedParameters
 {
 	FAIAssistantConfig Config;
 	Config.MainUrl = "https://just.a.test/foo/bar";
-	(void)TestEqual(TEXT("MainUrlRegxString"), Config.GetMainUrlAsRegexString(),
+	(void)TestEqual(TEXT("MainUrlRegxString"), UE::AIAsistant::GetUrlAsRegexString(Config.MainUrl),
 		TEXT(R"regex(^https://just\.a\.test/foo/bar$)regex"));
 	return true;
 }
