@@ -27,17 +27,12 @@ namespace UE::AIAssistant
 
 	// RAII container for a IWebJavaScriptDelegateBinder that binds a UObject on construction and
 	// unbinds on destruction.
-	class FScopedWebJavaScriptDelegateBinder
+	class FScopedWebJavaScriptDelegateBinder : public FNoncopyable
 	{
 	public:
 		FScopedWebJavaScriptDelegateBinder(
 			IWebJavaScriptDelegateBinder& Binder, const FString& Name, UObject* Object,
 			bool bIsPermanent = true);
-
-		// Prevent copy.
-		FScopedWebJavaScriptDelegateBinder(const FScopedWebJavaScriptDelegateBinder&) = delete;
-		FScopedWebJavaScriptDelegateBinder& operator=(
-			const FScopedWebJavaScriptDelegateBinder&) = delete;
 
 		~FScopedWebJavaScriptDelegateBinder();
 

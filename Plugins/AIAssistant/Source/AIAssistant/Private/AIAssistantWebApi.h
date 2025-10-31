@@ -201,7 +201,7 @@ namespace UE::AIAssistant
 	class FWebApiAccessor;
 
 	// API to communicate with the web assistant.
-	class FWebApi : private IWebJavaScriptDelegateBinder
+	class FWebApi : private IWebJavaScriptDelegateBinder, public FNoncopyable
 	{
 		friend class FWebApiAccessor;
 
@@ -210,8 +210,9 @@ namespace UE::AIAssistant
 				IWebJavaScriptDelegateBinder& JavaScriptDelegateBinder);
 
 		// Prevent copy.
-		FWebApi(const FWebApi&) = delete;
-		FWebApi& operator=(const FWebApi&) = delete;
+		//FWebApi(const FWebApi&) = delete;
+		//FWebApi& operator=(const FWebApi&) = delete;
+		
 
 		virtual ~FWebApi();
 
